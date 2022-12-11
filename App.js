@@ -1,23 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
-import { Button, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './StackNavigator';
+import { AuthProvider } from './hooks/useAuth';
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center">
-      <Text className="text-green-600 font-bold text-lg">Open up App.js to start working on your app!</Text>
-      <Button title="Click me" />
-      <StatusBar style="auto" />
-    </View>
+    // Higher level component */
+    //NavigationContainer is is higher order level
+    <NavigationContainer>
+      <AuthProvider >
+        {/*Passes down the coll auth to children  */}
+        <StackNavigator />
+      </AuthProvider>
+    </NavigationContainer>
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+
