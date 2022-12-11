@@ -10,5 +10,12 @@ npm-debug.*
 *.orig.*
 web-build/
 
+
+# node.js
+#
+node_modules/
+package-lock.json # include if you are using npm - don't use both yarn and npm
+npm-debug.log
+
 # macOS
 .DS_Store
